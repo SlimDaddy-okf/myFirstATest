@@ -69,4 +69,4 @@ test ('lesson2_screenshot', async ({ page }) => {
 
     expect(fs.existsSync("screenshots/body.png")).toBe(true);
     expect(fs.existsSync("screenshots/container.png")).toBe(true);
-})
+});
