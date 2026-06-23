@@ -11,22 +11,25 @@ test('click test', async ({ page }) => {
 test('checkBox and radio', async ({ page }) => {
     await page.goto('https://jqueryui.com/resources/demos/checkboxradio/default.html');
 
-    const
+    const radio1 = page.locator('[for=radio-1]');
+    const hotelRating = page.locator('[for=checkbox-4]');
+    const queenBed = page.locator('[for=checkbox-nested-3]');
+    const doubleBed = page.locator('[for=checkbox-nested-4]');
 
-    await page.locator('[for=radio-1]').click();      //Select a Location
-    await page.locator('[for=checkbox-4]').click();   //Hotel Ratings
-    await page.locator('[for=checkbox-nested-3]').click();    //Bed Type
-    await page.locator('[for=checkbox-nested-4]').click();  //Bed Type
+    await radio1.click();      //Select a Location
+    await hotelRating.click(); //Hotel Ratings
+    await queenBed.click();    //Bed Type
+    await doubleBed.click();   //Bed Type
 
-    await expect(page.locator("[for=radio-1]")).toHaveClass(/ui-checkboxradio-checked/);
-    await expect(page.locator("[for=checkbox-4]")).toHaveClass(/ui-checkboxradio-checked/);
-    await expect(page.locator("[for=checkbox-nested-3]")).toHaveClass(/ui-checkboxradio-checked/);
-    await expect(page.locator("[for=checkbox-nested-4]")).toHaveClass(/ui-checkboxradio-checked/);
+    await expect(radio1).toHaveClass(/ui-checkboxradio-checked/);
+    await expect(hotelRating).toHaveClass(/ui-checkboxradio-checked/);
+    await expect(queenBed).toHaveClass(/ui-checkboxradio-checked/);
+    await expect(doubleBed).toHaveClass(/ui-checkboxradio-checked/);
 
-    await expect(page.locator("[for=radio-1]")).toHaveCSS('background-color', 'rgb(0, 127, 255)');
-    await expect(page.locator("[for=checkbox-4]")).toHaveCSS('background-color', 'rgb(0, 127, 255)');
-    await expect(page.locator("[for=checkbox-nested-3]")).toHaveCSS('background-color', 'rgb(0, 127, 255)');
-    await expect(page.locator("[for=checkbox-nested-4]")).toHaveCSS('background-color', 'rgb(0, 127, 255)');
+    await expect(radio1).toHaveCSS('background-color', 'rgb(0, 127, 255)');
+    await expect(hotelRating).toHaveCSS('background-color', 'rgb(0, 127, 255)');
+    await expect(queenBed).toHaveCSS('background-color', 'rgb(0, 127, 255)');
+    await expect(doubleBed).toHaveCSS('background-color', 'rgb(0, 127, 255)');
 
 
 });
