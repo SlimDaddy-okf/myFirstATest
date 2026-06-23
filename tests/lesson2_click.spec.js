@@ -10,6 +10,9 @@ test('click test', async ({ page }) => {
 
 test('checkBox and radio', async ({ page }) => {
     await page.goto('https://jqueryui.com/resources/demos/checkboxradio/default.html');
+
+    const
+
     await page.locator('[for=radio-1]').click();      //Select a Location
     await page.locator('[for=checkbox-4]').click();   //Hotel Ratings
     await page.locator('[for=checkbox-nested-3]').click();    //Bed Type
