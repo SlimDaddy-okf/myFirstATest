@@ -2,10 +2,12 @@
 # Playwright
 node_modules/
 /test-results/
-/screenshots/
+screenshots/
 /pages/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
-/tests/testTask/
+tests/testTask/
+.idea/
+*.iml
